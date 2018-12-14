@@ -3,6 +3,6 @@ services:
   node-dev:
     build: ./container
     volumes:
-      - ./app:/usr/src/app
+      - ./minesweeper/src:/usr/src/app
     ports:
       - "3000:3000"
