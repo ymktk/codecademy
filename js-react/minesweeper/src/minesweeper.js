@@ -25,10 +25,10 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
     while (numberOfBombsPlaced < numberOfBombs) {
         let randomRowIndex    = Math.floor(Math.random() * numberOfRows);
         let randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
-
-        //FIXME: the potential to place bombs on top of already existing bombs.
-        board[randomRowIndex][randomColumnIndex] = 'B';
-        numberOfBombsPlaced++;
+        if (board[randomRowIndex][randomColumnIndex] !== 'B') {
+            board[randomRowIndex][randomColumnIndex] = 'B';
+            numberOfBombsPlaced++;
+        }
     }
 
     return board;
